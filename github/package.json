@@ -1,0 +1,6 @@
+{
+    "dependencies": {
+        "@rocket.chat/apps-ts-definition": "^0.9.13",
+        "typescript": "^2.9.1"
+    }
+}
