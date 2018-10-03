@@ -1,6 +1,6 @@
-import { IHttp, IModify, IPersistence, IRead } from '@rocket.chat/apps-ts-definition/accessors';
-import { RocketChatAssociationModel, RocketChatAssociationRecord } from '@rocket.chat/apps-ts-definition/metadata';
-import { ISlashCommand, SlashCommandContext } from '@rocket.chat/apps-ts-definition/slashcommands';
+import { IHttp, IModify, IPersistence, IRead } from '@rocket.chat/apps-engine/definition/accessors';
+import { RocketChatAssociationModel, RocketChatAssociationRecord } from '@rocket.chat/apps-engine/definition/metadata';
+import { ISlashCommand, SlashCommandContext } from '@rocket.chat/apps-engine/definition/slashcommands';
 
 import { IOutOfOfficeStorage } from './IOutOfOfficeStorage';
 
@@ -98,6 +98,6 @@ export class OutOfOfficeCommand implements ISlashCommand {
             .setUsernameAlias('Out of Office').setEmojiAvatar(':calendar:')
             .setRoom(context.getRoom()).setSender(context.getSender()).getMessage();
 
-        return await modify.getNotifer().notifyUser(context.getSender(), msg);
+        return await modify.getNotifier().notifyUser(context.getSender(), msg);
     }
 }

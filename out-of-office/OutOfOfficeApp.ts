@@ -4,11 +4,11 @@ import {
     IHttp,
     IPersistence,
     IRead,
-} from '@rocket.chat/apps-ts-definition/accessors';
-import { App } from '@rocket.chat/apps-ts-definition/App';
-import { IMessage, IPostMessageSent } from '@rocket.chat/apps-ts-definition/messages';
-import { RocketChatAssociationModel, RocketChatAssociationRecord } from '@rocket.chat/apps-ts-definition/metadata';
-import { RoomType } from '@rocket.chat/apps-ts-definition/rooms';
+} from '@rocket.chat/apps-engine/definition/accessors';
+import { App } from '@rocket.chat/apps-engine/definition/App';
+import { IMessage, IPostMessageSent } from '@rocket.chat/apps-engine/definition/messages';
+import { RocketChatAssociationModel, RocketChatAssociationRecord } from '@rocket.chat/apps-engine/definition/metadata';
+import { RoomType } from '@rocket.chat/apps-engine/definition/rooms';
 
 import { IOutOfOfficeStorage } from './IOutOfOfficeStorage';
 import { OutOfOfficeCommand} from './OutOfOfficeCommand';

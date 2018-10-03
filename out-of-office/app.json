@@ -3,12 +3,12 @@
     "name": "Out of Office Responder",
     "nameSlug": "out-of-office",
     "description": "Provides a command and auto responder for being out of office",
-    "version": "1.0.3",
-    "requiredApiVersion": "0.9.13",
+    "version": "1.0.4",
+    "requiredApiVersion": "^1.0.0",
     "author": {
         "name": "Bradley Hilton",
-        "homepage": "https://github.com/RocketChat/Rocket.Chat.Apps-dev-environment",
-        "support": "https://github.com/RocketChat/Rocket.Chat.Apps-dev-environment/issues"
+        "homepage": "https://github.com/graywolf336/RocketChatApps",
+        "support": "https://github.com/graywolf336/RocketChatApps/issues"
     },
     "classFile": "OutOfOfficeApp.ts",
     "iconFile": "out-of-office.jpg"
