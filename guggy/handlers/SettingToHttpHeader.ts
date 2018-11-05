@@ -3,7 +3,7 @@ import {
     IHttpRequest,
     IPersistence,
     IRead,
-} from '@rocket.chat/apps-ts-definition/accessors';
+} from '@rocket.chat/apps-engine/definition/accessors';
 
 export class SettingToHttpHeader implements IHttpPreRequestHandler {
     private readonly apiHeaderKey: string;

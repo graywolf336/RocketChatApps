@@ -1,5 +1,5 @@
-import { IHttp, IModify, IRead } from '@rocket.chat/apps-ts-definition/accessors';
-import { ISlashCommand, SlashCommandContext } from '@rocket.chat/apps-ts-definition/slashcommands';
+import { IHttp, IModify, IRead } from '@rocket.chat/apps-engine/definition/accessors';
+import { ISlashCommand, SlashCommandContext } from '@rocket.chat/apps-engine/definition/slashcommands';
 import { GuggyGetter } from '../getters/GuggyGetter';
 
 export class GuggyCommand implements ISlashCommand {
@@ -15,7 +15,13 @@ export class GuggyCommand implements ISlashCommand {
 
         try {
             const gifUrl = await this.getter.getTheGif(http, context.getArguments().join(' '));
-            builder.addAttachment({ imageUrl: gifUrl });
+            builder.addAttachment({
+                title: {
+                    value: `${ context.getArguments().join(' ') } via Guggy`,
+                    displayDownloadLink: false,
+                },
+                imageUrl: gifUrl
+            });
         } catch (e) {
             builder.setText('Sorry I don\'t have a photo for you :disappointed_relieved:');
         }

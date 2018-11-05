@@ -5,10 +5,10 @@ import {
     IHttp,
     ILogger,
     IRead,
-} from '@rocket.chat/apps-ts-definition/accessors';
-import { App } from '@rocket.chat/apps-ts-definition/App';
-import { IAppInfo } from '@rocket.chat/apps-ts-definition/metadata';
-import { ISetting, SettingType } from '@rocket.chat/apps-ts-definition/settings';
+} from '@rocket.chat/apps-engine/definition/accessors';
+import { App } from '@rocket.chat/apps-engine/definition/App';
+import { IAppInfo } from '@rocket.chat/apps-engine/definition/metadata';
+import { ISetting, SettingType } from '@rocket.chat/apps-engine/definition/settings';
 
 import { GuggyCommand } from './commands/GuggyCommand';
 import { GuggyGetter } from './getters/GuggyGetter';
@@ -62,7 +62,7 @@ export class GuggyApp extends App {
     private async handleApiKeySettingHandle(setting: ISetting, configModify: IConfigurationModify, http: IHttp): Promise<void> {
         if (setting.value) {
             try {
-                this.guggyGetter.getTheGif(http, 'testing');
+                await this.guggyGetter.getTheGif(http, 'testing');
                 this.getLogger().log('Enabling the slash command.');
                 await configModify.slashCommands.enableSlashCommand('guggy');
             } catch (e) {

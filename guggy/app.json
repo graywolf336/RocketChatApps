@@ -3,8 +3,8 @@
     "name": "Guggy Command",
     "nameSlug": "guggy-command",
     "description": "Provides a command for generating gifs based upon text provided.",
-    "version": "1.0.11",
-    "requiredApiVersion": "0.9.13",
+    "version": "1.1.1",
+    "requiredApiVersion": "^1.0.0",
     "author": {
         "name": "Bradley Hilton",
         "homepage": "https://github.com/graywolf336/temporary-apps-dev-environment",
