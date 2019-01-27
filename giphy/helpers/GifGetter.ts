@@ -1,4 +1,4 @@
-import { HttpStatusCode, IHttp, ILogger } from '@rocket.chat/apps-ts-definition/accessors';
+import { HttpStatusCode, IHttp, ILogger } from '@rocket.chat/apps-engine/definition/accessors';
 
 import { GiphyResult } from '../helpers/GiphyResult';
 

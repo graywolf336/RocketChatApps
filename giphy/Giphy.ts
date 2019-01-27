@@ -2,9 +2,10 @@ import {
     IConfigurationExtend,
     IEnvironmentRead,
     ILogger,
-} from '@rocket.chat/apps-ts-definition/accessors';
-import { App } from '@rocket.chat/apps-ts-definition/App';
-import { IAppInfo } from '@rocket.chat/apps-ts-definition/metadata';
+} from '@rocket.chat/apps-engine/definition/accessors';
+
+import { App } from '@rocket.chat/apps-engine/definition/App';
+import { IAppInfo } from '@rocket.chat/apps-engine/definition/metadata';
 
 import { GiphyCommand } from './commands/GiphyCommand';
 import { GifGetter } from './helpers/GifGetter';
