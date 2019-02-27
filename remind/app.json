@@ -1,0 +1,15 @@
+{
+    "id": "cec560f1-2070-4c83-b1a8-3e5eb73ec401",
+    "version": "0.0.1",
+    "requiredApiVersion": "^0.9.13",
+    "iconFile": "icon.png",
+    "author": {
+        "name": "Bradley Hilton",
+        "homepage": "github.com",
+        "support": "github.com/graywolf336"
+    },
+    "name": "Remind",
+    "nameSlug": "remind",
+    "classFile": "RemindApp.ts",
+    "description": "Provides ways to be reminded to do something."
+}

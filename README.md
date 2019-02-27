@@ -1,5 +1,5 @@
-# Rocket.Chat Marketplace Staff
-App which handles and provides a way to approve or reject apps in the Marketplace.
+# Remind
+Provides ways to be reminded to do something.
 
 ## Getting Started
 Now that you have generated a blank default Rocket.Chat App, what are you supposed to do next?
@@ -12,8 +12,8 @@ Here are some commands to get started:
 
 ## Documentation
 Here are some links to examples and documentation:
-- [Rocket.Chat Apps TypeScript Definitions Documentation](https://rocketchat.github.io/Rocket.Chat.Apps-ts-definition/)
-- [Rocket.Chat Apps TypeScript Definitions Repository](https://github.com/RocketChat/Rocket.Chat.Apps-ts-definition)
+- [Rocket.Chat Apps TypeScript Definitions Documentation](https://rocketchat.github.io/Rocket.Chat.Apps-engine/)
+- [Rocket.Chat Apps TypeScript Definitions Repository](https://github.com/RocketChat/Rocket.Chat.Apps-engine)
 - [Example Rocket.Chat Apps](https://github.com/graywolf336/RocketChatApps)
 - Community Forums
   - [App Requests](https://forums.rocket.chat/c/rocket-chat-apps/requests)
