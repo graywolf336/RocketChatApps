@@ -1,4 +1,4 @@
-import { ISlashCommandPreviewItem, SlashCommandPreviewItemType } from '@rocket.chat/apps-ts-definition/slashcommands';
+import { ISlashCommandPreviewItem, SlashCommandPreviewItemType } from '@rocket.chat/apps-engine/definition/slashcommands';
 
 export class GiphyResult {
     public id: string;

@@ -1,5 +1,5 @@
-import { IHttp, IModify, IPersistence, IRead } from '@rocket.chat/apps-ts-definition/accessors';
-import { ISlashCommand, ISlashCommandPreview, ISlashCommandPreviewItem, SlashCommandContext } from '@rocket.chat/apps-ts-definition/slashcommands';
+import { IHttp, IModify, IPersistence, IRead } from '@rocket.chat/apps-engine/definition/accessors';
+import { ISlashCommand, ISlashCommandPreview, ISlashCommandPreviewItem, SlashCommandContext } from '@rocket.chat/apps-engine/definition/slashcommands';
 
 import { GiphyApp } from '../Giphy';
 import { GiphyResult } from '../helpers/GiphyResult';
@@ -65,7 +65,7 @@ export class GiphyCommand implements ISlashCommand {
             this.app.getLogger().error('Failed getting a gif', e);
             builder.setText('An error occured when trying to send the gif :disappointed_relieved:');
 
-            modify.getNotifer().notifyUser(context.getSender(), builder.getMessage());
+            modify.getNotifier().notifyUser(context.getSender(), builder.getMessage());
         }
     }
 }
