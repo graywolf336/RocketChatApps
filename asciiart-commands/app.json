@@ -3,12 +3,12 @@
     "name": "ASCII Art Commands",
     "nameSlug": "asciiart-commands",
     "description": "Provides neat little asciiart commands for fun usage.",
-    "version": "1.0.4",
-    "requiredApiVersion": "0.9.13",
+    "version": "1.0.5",
+    "requiredApiVersion": "^1.4.0",
     "author": {
         "name": "Bradley Hilton",
-        "homepage": "https://github.com/graywolf336/temporary-apps-dev-environment",
-        "support": "https://github.com/graywolf336/temporary-apps-dev-environment/issues"
+        "homepage": "https://github.com/graywolf336/RocketChatApps",
+        "support": "https://github.com/graywolf336/RocketChatApps/issues"
     },
     "classFile": "AsciiArtCommandsApp.ts",
     "iconFile": "icon.png"

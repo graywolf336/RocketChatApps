@@ -1,5 +1,5 @@
-import { IHttp, IModify, IRead, ISettingRead } from '@rocket.chat/apps-ts-definition/accessors';
-import { ISlashCommand, SlashCommandContext } from '@rocket.chat/apps-ts-definition/slashcommands';
+import { IHttp, IModify, IRead, ISettingRead } from '@rocket.chat/apps-engine/definition/accessors';
+import { ISlashCommand, SlashCommandContext } from '@rocket.chat/apps-engine/definition/slashcommands';
 
 export class ShrugCommand implements ISlashCommand {
     public static CommandName = 'shrug';
