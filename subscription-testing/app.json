@@ -1,0 +1,15 @@
+{
+    "id": "13ca6e9e-3abf-48bf-a4ae-73ac8dc3fab0",
+    "version": "0.0.6",
+    "requiredApiVersion": "^1.6.0",
+    "iconFile": "icon.png",
+    "author": {
+        "name": "Bradley Hilton",
+        "homepage": "github.com",
+        "support": "github.com/graywolf336"
+    },
+    "name": "subscription-testing",
+    "nameSlug": "subscription-testing",
+    "classFile": "SubscriptionTestingApp.ts",
+    "description": "Just testing the new subscription items"
+}
