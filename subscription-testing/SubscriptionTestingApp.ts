@@ -18,11 +18,9 @@ export class SubscriptionTestingApp extends App implements IPostMessageSent {
     public async executePostMessageSent(message: IMessage, read: IRead, http: IHttp, persistence: IPersistence, modify: IModify): Promise<void> {
         const iterator = await read.getRoomSubscriptionReader().getByRoomId(message.room.id);
 
-        this.getLogger().log('iterator', iterator);
-        this.getLogger().log('iterator keys', Object.keys(iterator));
-        this.getLogger().log('iterator[Symbol.iterator]()', iterator[Symbol.iterator]());
+        this.getLogger().log('type', typeof iterator, 'keys', Object.keys(iterator));
 
-        for await (const sub of iterator) {
+        for (const sub of iterator) {
             this.getLogger().log('subscription', sub);
         }
     }
