@@ -3,7 +3,7 @@
     "name": "Out of Office Responder",
     "nameSlug": "out-of-office",
     "description": "Provides a command and auto responder for being out of office",
-    "version": "1.0.4",
+    "version": "1.1.0",
     "requiredApiVersion": "^1.0.0",
     "author": {
         "name": "Bradley Hilton",

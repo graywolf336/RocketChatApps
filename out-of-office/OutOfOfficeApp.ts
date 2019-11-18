@@ -8,7 +8,8 @@ import {
 import { App } from '@rocket.chat/apps-engine/definition/App';
 import { IMessage, IPostMessageSent } from '@rocket.chat/apps-engine/definition/messages';
 import { RocketChatAssociationModel, RocketChatAssociationRecord } from '@rocket.chat/apps-engine/definition/metadata';
-import { RoomType } from '@rocket.chat/apps-engine/definition/rooms';
+import { IRoom, RoomType } from '@rocket.chat/apps-engine/definition/rooms';
+import { IUser } from '@rocket.chat/apps-engine/definition/users';
 
 import { IOutOfOfficeStorage } from './IOutOfOfficeStorage';
 import { OutOfOfficeCommand} from './OutOfOfficeCommand';
@@ -36,7 +37,8 @@ export class OutOfOfficeApp extends App implements IPostMessageSent {
 
         const awayDatas = await read.getPersistenceReader().readByAssociation(assoc);
         if (awayDatas.length === 0) {
-            // The user is not marked as away
+            // The user is not marked as away, but now check the sender
+            await this.checkAndSendReminderMessage(message.sender, message.room, read);
             return;
         }
 
@@ -48,12 +50,28 @@ export class OutOfOfficeApp extends App implements IPostMessageSent {
             .setRoom(message.room).setSender(message.sender).getMessage();
 
         await read.getNotifier().notifyUser(message.sender, msg);
-
-        this.getLogger().log(otherUser.username +
-            ' is currently *out of office*, however they left the following message:\n\n>"' + data.message + '"');
     }
 
     protected async extendConfiguration(configuration: IConfigurationExtend, environmentRead: IEnvironmentRead): Promise<void> {
         await configuration.slashCommands.provideSlashCommand(new OutOfOfficeCommand());
+    }
+
+    private async checkAndSendReminderMessage(sender: IUser, room: IRoom, read: IRead): Promise<void> {
+        const assoc = new RocketChatAssociationRecord(RocketChatAssociationModel.USER, sender.id);
+
+        const awayDatas = await read.getPersistenceReader().readByAssociation(assoc);
+        if (awayDatas.length === 0) {
+            // the sender is not away
+            return;
+        }
+
+        const data = awayDatas[0] as IOutOfOfficeStorage;
+        const msg = read.getNotifier().getMessageBuilder().setText(sender.username +
+            ', you are currently marked as *out of office* with the following message:\n\n>' +
+            data.message)
+            .setUsernameAlias('Out of Office').setEmojiAvatar(':calendar:')
+            .setRoom(room).setSender(sender).getMessage();
+
+        await read.getNotifier().notifyUser(sender, msg);
     }
 }
