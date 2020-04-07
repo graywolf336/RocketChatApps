@@ -1,0 +1,6 @@
+{
+    "Guggy_Api_Key": "API Key di Guggy",
+    "Guggy_Api_Key_Description": "Le API Keys possono essere ottenute scrivendo via email: `api@guggy.com`",
+    "Guggy_Command_Description": "Cerca una GIF basandosi sul testo fornito.",
+    "Guggy_Text_On_Image": "Aiutami!"
+}

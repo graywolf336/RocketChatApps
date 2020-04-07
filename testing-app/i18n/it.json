@@ -1,0 +1,23 @@
+{
+    "TestingApp_NoParams": "Nessun parametro richiesto.",
+    "TestingApp_CmdWithPerm": "Comando vietato da un permesso.",
+    "TestingApp_CmdNoPerm": "Il comando è senza restrizioni.",
+    "TestingApp_TestingPrefix": "Prefisso per il Test",
+    "TestingApp_TestingPrefix_Description": "Alcuni test richiedono un prefisso nei messaggi. Quale prefisso dovrebbe essere?",
+    "TestingApp_TestingBoolean": "Testing booleano",
+    "TestingApp_TestingBoolean_Description": "Solo un'impostazione per fare testing sull'impostazione di tipo `boolean`. Normalmente è ignorato se non durante il testing. ;)",
+    "TestingApp_TestingColor": "Testing colori",
+    "TestingApp_TestingColor_Description": "Un'altra impostazione ma questa volta per il testing sull'impostazione di tipo `color`. :D",
+    "TestingApp_TestingNumber": "Testing numeri",
+    "TestingApp_TestingNumber_Description": "Ancora un'altra impostazione. Tuttavia, questa è per il testing sull'impostazione di tipo `number`. :)",
+    "TestingApp_TestingSelect": "Seleziona Testing",
+    "TestingApp_TestingSelect_Description": "Ecco un'impostazione per il testing dell'impostazione di tipo `select`. :P",
+    "TestingApp_FirstSelectOption": "Prima Opzione",
+    "TestingApp_SecondSelectOption": "Seconda Opzione",
+    "TestingApp_ThirdSelectOption": "Terza Opzione",
+    "TestingApp_LastSelectOption": "Ultima Opzione",
+    "TestingApp_TestingMultiString": "Test Stringa Multi Linea",
+    "TestingApp_TestingMultiString_Description": "Perché sto scrivendo le descrizioni? Sono solo test cavolo, come questo che verifica l'impostazione su linee multiple di tipo `string`. (..)",
+    "TestingApp_TestingCode": "Test codice",
+    "TestingApp_TestingCode_Description": "Sono annoiato. Ti prego verifica l'impostazione di tipo `code`. :X"
+}
