@@ -6,7 +6,7 @@ import {
     IRead,
 } from '@rocket.chat/apps-engine/definition/accessors';
 import { App } from '@rocket.chat/apps-engine/definition/App';
-import { IMessage, IPostMessageSent } from '@rocket.chat/apps-engine/definition/messages';
+import { IMessage, IPostMessageSent, MessageActionButtonsAlignment, MessageActionType } from '@rocket.chat/apps-engine/definition/messages';
 import { RocketChatAssociationModel, RocketChatAssociationRecord } from '@rocket.chat/apps-engine/definition/metadata';
 import { IRoom, RoomType } from '@rocket.chat/apps-engine/definition/rooms';
 import { IUser } from '@rocket.chat/apps-engine/definition/users';
@@ -26,6 +26,39 @@ export class OutOfOfficeApp extends App implements IPostMessageSent {
 
     public async executePostMessageSent(message: IMessage, read: IRead,
                                         http: IHttp, persistence: IPersistence): Promise<void> {
+
+        // If I'm away and type, need to offer an option to leave away
+        const me = message.sender;
+        const assocMe = new RocketChatAssociationRecord(RocketChatAssociationModel.USER, me.id);
+        const awayMe = await read.getPersistenceReader().readByAssociation(assocMe);
+        if (awayMe.length > 0) {
+            // Notify me with options to leave or cotinue out of office
+            const text = 'You are currently out-of-office. Would you like to check back in?';
+            const attachment = {
+                actionButtonsAlignment: MessageActionButtonsAlignment.HORIZONTAL,
+                actions: [
+                    {
+                        text: 'Yes',
+                        type: MessageActionType.BUTTON,
+                        msg_in_chat_window: true,
+                        msg: '/out-of-office in',
+                    },
+                    {
+                        text: 'No',
+                        type: MessageActionType.BUTTON,
+                        msg_in_chat_window: true,
+                        msg: '/out-of-office status',
+                    },
+                ],
+            };
+
+            const msgMe = read.getNotifier().getMessageBuilder().setText(text).setAttachments([attachment])
+                .setUsernameAlias('Out of Office').setEmojiAvatar(':calendar:')
+                .setRoom(message.room).setSender(message.sender).getMessage();
+
+            await read.getNotifier().notifyUser(message.sender, msgMe);
+        }
+
         const otherUsers = message.room.usernames.filter((u) => u !== message.sender.username);
         if (otherUsers.length !== 1) {
             // We don't care if there isn't one other person in the room
