@@ -20,7 +20,7 @@ export class SubscriptionTestingApp extends App implements IPostMessageSent {
 
         this.getLogger().log('type', typeof iterator, 'keys', Object.keys(iterator));
 
-        for (const sub of iterator) {
+        for await (const sub of iterator) {
             this.getLogger().log('subscription', sub);
         }
     }

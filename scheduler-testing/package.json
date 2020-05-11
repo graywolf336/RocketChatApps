@@ -1,0 +1,7 @@
+{
+    "devDependencies": {
+        "@rocket.chat/apps-engine": "file:../../Rocket.Chat.Apps-engine",
+        "typescript": "^2.9.1",
+        "@types/node": "^13.5.0"
+    }
+}
