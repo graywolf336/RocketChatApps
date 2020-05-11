@@ -8,7 +8,7 @@
     "author": {
         "name": "Bradley Hilton",
         "homepage": "https://github.com/graywolf336/RocketChatApps",
-        "support": "https://github.com/graywolf336/RocketChatApps/issues"
+        "support": "https://github.com/graywolf336/RocketChatApps/blob/master/out-of-office/README.md"
     },
     "classFile": "OutOfOfficeApp.ts",
     "iconFile": "out-of-office.jpg"
