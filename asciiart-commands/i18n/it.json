@@ -1,0 +1,12 @@
+{
+    "Enable_Gimme_Command": "Abilita il comando Gimme",
+    "Enable_Gimme_Command_Description": "Se il comando `/gimme` deve essere abilitato o meno.",
+    "Enable_Lenny_Command": "Abilita il comand Lenny",
+    "Enable_Lenny_Command_Description": "Se il comando `/lenny` deve essere abilitato o meno.",
+    "Enable_Shrug_Command": "Abilita il comando Shrug",
+    "Enable_Shrug_Command_Description": "Se il comando `/shrug` deve essere abilitato o meno.",
+    "Enable_Tableflip_Command": "Abilita il comando Tableflip",
+    "Enable_Tableflip_Command_Description": "Se il comando `/tableflip` deve essere abilitato o meno.",
+    "Enable_Unflip_Table_Command": "Abilita il comando Unflip Table",
+    "Enable_Unflip_Table_Description": "Se il comando `/unflip` deve essere abilitato o meno."
+}

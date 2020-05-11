@@ -1,0 +1,4 @@
+{
+    "outOfOfficeParamExample": "out|in|stato <Il tuo messaggio di stato qui (opzionale)>",
+    "outOfOfficeDescription": "Ti permette di impostare l'Out of Office con un messaggio"
+}
