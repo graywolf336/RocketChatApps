@@ -62,3 +62,6 @@ typings/
 
 # rc-apps output
 dist/
+
+# misc
+.DS_Store
